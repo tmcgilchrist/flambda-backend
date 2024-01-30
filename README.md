@@ -19,7 +19,7 @@ One-time setup (you can also use 4.14.1):
 ```
 $ opam switch 4.14.0  # or "opam switch create 4.14.0" if you haven't got that switch already
 $ eval $(opam env)
-$ opam install dune
+$ opam install dune.3.8.1 menhir.20210419
 ```
 
 You probably then want to fork the `ocaml-flambda/flambda-backend` repo to your own Github org.
@@ -45,5 +45,9 @@ $ ./configure --prefix=/path/to/install/dir
 To build and install the Flambda backend, which produces a compiler installation directory whose
 layout is compatible with upstream, run:
 ```
+$ make boot-compiler
+$ make runtime-stdlib
+$ make compiler
+$ make _install
 $ make install
 ```
